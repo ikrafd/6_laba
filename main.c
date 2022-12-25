@@ -2,38 +2,8 @@
 #include <math.h>
 #include <stdlib.h>
 char count (int n, double **a, double *b);
-void check_char (double *var, int n){
-    char er, ch;
-    do {
-        er = 0;
-        scanf("%lf%c", var, &ch);
-        if(ch != '\n') {
-            printf("Invalid data\n");
-            er = 1;
-            fflush(stdin);
-        } else if(n==1){
-            if(*var==0){
-                er = 1;
-                fflush(stdin);
-                printf("Diagonal element cannot equal 0\n");
-            }
-        }
-    } while(er);
-
-}
-
-void check_char_int (int *var){
-    char er, ch;
-    do {
-        er = 0;
-        scanf("%i%c", var, &ch);
-        if(ch != '\n') {
-            printf("Invalid data\n");
-            er = 1;
-            fflush(stdin);
-        }
-    } while(er);
-}
+void check_char (double *var, int n);
+void check_char_int (int *var);
 
 
 int main () {
@@ -135,4 +105,37 @@ char count (int n, double **a, double *b) {
             return 0;
         }
     }
+}
+
+void check_char (double *var, int n){
+    char er, ch;
+    do {
+        er = 0;
+        scanf("%lf%c", var, &ch);
+        if(ch != '\n') {
+            printf("Invalid data\n");
+            er = 1;
+            fflush(stdin);
+        } else if(n==1){
+            if(*var==0){
+                er = 1;
+                fflush(stdin);
+                printf("Diagonal element cannot equal 0\n");
+            }
+        }
+    } while(er);
+
+}
+
+void check_char_int (int *var){
+    char er, ch;
+    do {
+        er = 0;
+        scanf("%i%c", var, &ch);
+        if(ch != '\n') {
+            printf("Invalid data\n");
+            er = 1;
+            fflush(stdin);
+        }
+    } while(er);
 }
